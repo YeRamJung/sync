@@ -1,0 +1,11 @@
+<mvc:View controllerName="sync.d21.exercise2105.controller.View"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Label id="label" text="입력하세요" required="true"></Label>
+            <Input id="input" value="{/input}" width="60%"></Input>
+            <Button id="button" press=".onPress" text="메세지출력"></Button>
+        </content>
+    </Page>
+</mvc:View>

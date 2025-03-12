@@ -1,0 +1,114 @@
+<mvc:View 
+    controllerName="sync6.exercise2107.controller.View"
+    xmlns:table="sap.ui.table" 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+
+    <!--요소들을 세로로 나열해줌-->
+    <VBox class="sapUiMediumMarginBottom"
+            alignItems="Start">
+        <HBox alignItems="Center">
+           <Label text="Carrier Id:"
+                 width="130px"
+                 design="Bold"></Label>
+            <Input id="carridInput"
+                    placeholder="Enter Carrier ID"
+                    required="true"
+                    width="200px"></Input>
+        </HBox>
+
+        <HBox alignItems="Center">
+           <Label text="Carrier Name:"
+                 width="130px"
+                 design="Bold"></Label>
+            <Input id="carrnameInput"
+                placeholder="Enter Carrier Name"
+                required="true"
+                width="200px"></Input>
+        </HBox>
+        
+        <HBox alignItems="Center">
+           <Label text="Currency Code:"
+                 width="130px"
+                 design="Bold"></Label>
+            <Input id="currcodeInput"
+                placeholder="Enter Currency Code"
+                required="true"
+                width="200px"></Input>
+        </HBox>
+        
+        <HBox alignItems="Center">
+           <Label text="Url:"
+                 width="130px"
+                 design="Bold"></Label>
+            <Input id="urlInput"
+                placeholder="Enter URL http://"
+                required="true"
+                width="200px"></Input>
+        </HBox>
+
+        <HBox class="sapUiMediumMarginTop">
+            <Button id="createBtn"
+                    text="Create"
+                    type="Emphasized"
+                    icon="sap-icon://write-new"
+                    press=".onCreate"></Button>
+            <Button id="deleteBtn"
+                    text="Delete"
+                    type="Negative"
+                    icon="sap-icon://delete"
+                    press=".onDelete"></Button>
+            <Button id="updateBtn"
+                    text="Update"
+                    type="Default"
+                    icon="sap-icon://technical-object"
+                    press=".onUpdate"></Button>
+        </HBox>
+    </VBox>
+    
+
+    <Table  id="mTable"
+            items="{oModel>/ZCARR_D21Set}"
+            mode="SingleSelectLeft">
+                 
+        <columns>
+            <Column>
+                <header>
+                    <Label text="Carrid"></Label>
+                </header>
+            </Column>
+
+            <Column>
+                <header>
+                    <Label text="Carrname"></Label>
+                </header>
+            </Column>
+
+            <Column>
+                <header>
+                    <Label text="Currcode"></Label>
+                </header>
+            </Column>
+
+            <Column>
+                <header>
+                    <Label text="Url"></Label>
+                </header>
+            </Column>
+        </columns>
+
+        <items>
+            <ColumnListItem>
+                <cells>
+                    <Text text="{oModel>Carrid}"/>
+                    <Text text="{oModel>Carrname}"/>
+                    <Text text="{oModel>Currcode}"/>
+                    <Link text="{oModel>Url}" href="{oModel>Url}" target="_blank"/> <!--하이퍼링크 형태로 만들어줌-->
+                </cells>
+            </ColumnListItem>
+        </items>             
+                 
+    </Table>
+    </Page>
+</mvc:View>

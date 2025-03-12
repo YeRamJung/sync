@@ -1,0 +1,38 @@
+<mvc:View 
+    controllerName="sync.d21.calculate.controller.Calc" 
+    xmlns:core="sap.ui.core" 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <App id="calc">
+    <Page id="page" title="{i18n>title}">  
+    <content>
+        <VBox id="vbox">
+            <Label id="label_first" text="{i18n>firstNumberLabel}" required="true"></Label>
+            <Input id="input_first" value="{i18n>errorEmptyInput}" width="20%"></Input>
+            <Label id="label_second" text="{i18n>secondNumberLabel}" required="true"></Label>
+            <Input id="input_second" value="{i18n>errorEmptyInput}" width="20%"></Input>
+            <Label id="label_select" text="{i18n>operationLabel}" required="true"></Label>
+
+            <!--사칙연산 선택하는 드롭박스-->
+            <Select id="select" selectedKey="{calcModel>operation}" width="20%">
+                <items>
+                    <core:Item id="pluse" key="pluse" text="더하기(+)"></core:Item>
+                    <core:Item id="minus" key="minus" text="빼기(-)"></core:Item>
+                    <core:Item id="multi" key="multi" text="곱하기(*)"></core:Item>
+                    <core:Item id="division" key="division" text="나누기(/)"></core:Item>
+                </items>
+            </Select>
+
+            <!--사칙연산하기 & 구구단보기 버튼-->
+            <Button id="btn_cal" text="{i18n>calculateButton}" press=".onCalculate" class="sapUiSmallMarginTop"></Button>
+            <Button id="btn_gugudan" text="{i18n>multiplicationTable}" press=".onGugudan" class="sapUiSmallMarginTop"></Button>
+
+            <!--사칙연산 결과 보여주기-->
+            <Label id="label_result" text="{i18n>resultLabel}"></Label>
+            <Text id="text_result" text=""></Text>
+            
+        </VBox>
+    </content>
+    </Page>
+    </App>
+</mvc:View>

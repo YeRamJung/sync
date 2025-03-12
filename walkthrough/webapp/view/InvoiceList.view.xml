@@ -1,0 +1,68 @@
+<mvc:View
+   controllerName="ui5.walkthrough.controller.InvoiceList"
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core"
+   xmlns:mvc="sap.ui.core.mvc">
+   <List
+      id="invoiceList"
+      headerText="{i18n>invoiceListTitle}"
+      class="sapUiResponsiveMargin"
+      width="auto"
+      core:require="{Formatter: 'ui5/walkthrough/model/formatter'}"
+      items="{path : 'invoice>/Invoices',
+               sorter : {path : 'ProductName'}}" >
+
+      <headerToolbar>
+         <Toolbar>
+            <!--상단 왼쪽 제목 자리-->
+            <Title text="{i18n>invoiceListTitle}"></Title>
+
+            <!--간격 주기-->
+            <ToolbarSpacer width="20%"></ToolbarSpacer>
+
+            <!--search field 자리: 가로너비 & 돋보기 눌렀을 때 어느 이벤트 연결해줄지 설정-->
+            <SearchField id="searchField"
+                         width="50%"
+                         search=".onFilterInvoices"
+                         placeholder="ProductName 입력하세요">
+            </SearchField>
+         
+         </Toolbar>
+      
+      </headerToolbar>
+
+
+      <items>
+         <!--currency 정보-->
+         <ObjectListItem
+            title="{invoice>Quantity} x {invoice>ProductName}"
+            number="{
+               parts:['invoice>ExtendedPrice', 'view>currency'],
+               type: 'sap/ui/model/type/Currency',
+               formatOptions : {showMeasure : false}
+            }"
+            numberUnit="{view>/currency}"
+            numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }"
+            icon="sap-icon://product">
+
+               <!--내가 만든 statusText() 포맷터 함수 호출하고 바인딩-->
+               <firstStatus>
+                    <ObjectStatus
+                        text="{
+                            path: 'invoice>Status',
+                            formatter: 'Formatter.statusText.bind($controller)'
+                        }"/>
+                </firstStatus>
+
+                <secondStatus>
+                  <ObjectStatus text="{
+                  path: 'invoice>ShipperName',
+                  formatter : 'Formatter.shipperNameText.bind($controller)'
+                   }">
+                  </ObjectStatus>
+                </secondStatus>
+
+         </ObjectListItem>
+      </items>
+   </List>
+</mvc:View>

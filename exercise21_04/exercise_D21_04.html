@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>면적 구하는 함수 선언 및 호출</title>
+    </head>
+    <body>
+        <h2>면적 구하기</h2>
+        <p>가로와 세로를 입력하세요</p>
+
+        <!--입력 필드-->
+        <!--가로, 세로 각각 label, input 필드 / 버튼-->
+        <label for="len">가로: </label>
+        <input type="number" id="len" placeholder="가로 길이를 입력하세요" style="margin-bottom: 10px;"> <!--style : 아래와 간격 띄우기-->
+        <br>   <!--개행-->
+        <label for="wid">세로: </label>
+        <input type="number" id="wid" placeholder="세로 길이를 입력하세요">
+        <br>
+        <button type="submit" onclick="calculate()" style="margin-top: 20px;">면적 계산하기</button>
+        <h3 id="result"></h3>
+
+
+
+        <script src="exercise_D21_04.js"></script>
+    </body>
+</html>

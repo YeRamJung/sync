@@ -1,0 +1,64 @@
+<mvc:View 
+    controllerName="sync6.exercise2109.controller.View"
+    xmlns:table="sap.ui.table" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+
+            <!--라인차트 그리기-->
+            <!--1. 차트 정의-->
+            <viz:VizFrame  
+                            id="lineChart"
+                            width="100%"
+                            height="480px"
+                            vizType="line"
+                            vizProperties="{title: {text : '주문 상품 차트', visible : true},
+                                            plotArea : {
+                                                dataLabel : {visible : true}
+                                            }}">
+
+                <!--2.데이터 바인딩-->
+                <viz:dataset>
+                    <viz.data:FlattenedDataset  id="lineData"
+                                                data="{chartModel>/SoHeaderSet}">
+
+                        <!--축 정보-->
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition id="lineDemension"
+                                                          name="ProductName"
+                                                          value="{chartModel>ProductName}">
+                            </viz.data:DimensionDefinition>
+                        </viz.data:dimensions>
+
+                        <!--데이터 정보-->
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition id="lineMeasure"
+                                                        name="UnitsInStock"
+                                                        value="{chartModel>UnitsInStock}">
+                            </viz.data:MeasureDefinition>
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <!--3. feedItem 정의-->
+                <viz:feeds>
+                    <!--x축-->
+                    <viz.feeds:FeedItem id="xFeed"
+                                        uid="categoryAxis"
+                                        type="Dimension"
+                                        values="ProductName">
+                    </viz.feeds:FeedItem>
+                    
+                    <!--y축-->
+                    <viz.feeds:FeedItem id="yFeed"
+                                        uid="valueAxis"
+                                        type="Measure"
+                                        values="UnitsInStock">
+                    </viz.feeds:FeedItem>
+                </viz:feeds>          
+            </viz:VizFrame>
+
+        </content>
+    </Page>
+</mvc:View>

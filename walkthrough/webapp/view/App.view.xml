@@ -1,0 +1,48 @@
+<!-- <mvc:View
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc">
+
+   <Text text="Hello World.this is new"/>
+
+</mvc:View> -->
+
+
+<mvc:View
+   controllerName="ui5.walkthrough.controller.App"    
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc"
+   displayBlock="true">
+   <Shell backgroundColor="red">
+		<App backgroundColor="blue"
+			 class="myAppDemoWT">
+			<pages>
+				<Page title="{i18n>homePageTitle}"
+					  class="sapUiMediumMargin">
+					<content>
+						<mvc:XMLView viewName="ui5.walkthrough.view.HelloPanel"/> 
+                  <mvc:XMLView viewName="ui5.walkthrough.view.InvoiceList"/>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+
+
+
+
+<!--    <Button
+      text="Say Hello"
+      press=".onShowHello"/> -->
+
+   <!--리소스 모델 사용하기 - i18n.properties 에 있는 값으로 버튼 text 표현하기 -->   
+   <!--i18n 모델은 직접 바인딩함. 경로 표현 불필요! -->
+   <!-- <Button
+   text="{i18n>showHelloButtonText}"
+   press=".onShowHello"/>
+
+   <Input
+   value="{/recipient/name}"
+   description="Hello {/recipient/name}"
+   valueLiveUpdate="true"
+   width="60%"/> -->
+</mvc:View>
