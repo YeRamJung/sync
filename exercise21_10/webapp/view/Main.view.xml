@@ -1,0 +1,12 @@
+<mvc:View controllerName="sync6.exercise2110.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+
+        <content>
+            <Button text="Detail" press=".onGoDetail">
+            </Button>
+            <Input id="input" width="30%"></Input>
+        </content>
+    </Page>
+</mvc:View>

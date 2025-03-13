@@ -1,0 +1,27 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core">
+
+    <Dialog id="dialog"
+            title="사원 상세정보">
+
+        <VBox id="vbox">
+            <Text id="Name" text="Name: {selectedEmployee>/Name}" />
+            <Text id="Position" text="Position: {selectedEmployee>/Position}" />
+            <Text id="Department" text="Department: {selectedEmployee>/Department}" />
+            <Text id="Status" text="Status: {selectedEmployee>/Status}" />
+            <Text id="Email" text="Email: {selectedEmployee>/Email}" />
+            <Text id="Phone" text="Phone: {selectedEmployee>/Phone}" />
+            <Text id="Location" text="Location: {selectedEmployee>/Location}" />
+            <Text id="Salary" text="Salary: {selectedEmployee>/Salary}" />
+        </VBox>
+
+        <endButton>
+            <Button id="closeBtn"
+                    text="close"
+                    press=".onCloseDialog">
+            </Button>
+        </endButton>
+    </Dialog>
+
+</core:FragmentDefinition>

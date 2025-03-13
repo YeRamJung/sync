@@ -18,7 +18,7 @@ sap.ui.define(
         const oCalcModel = {
           firstNumber: "",
           secondNumber: "",
-          operation: "pluse",
+          operation: "pluse", // 연산은 기본값을 덧셈으로 설정
           result: "",
         };
         const calcModel = new JSONModel(oCalcModel);

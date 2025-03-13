@@ -10,7 +10,7 @@
     <Page id="page" title="{i18n>title}">
         <content>
 
-            <!--라인차트 그리기-->
+            <!--column 차트 그리기-->
             <!--1. 차트 정의-->
             <viz:VizFrame  
                             id="lineChart"
@@ -58,7 +58,8 @@
                                         type="Dimension"    
                                         values="ProductName">
                     </viz.feeds:FeedItem>
-                                        <viz.feeds:FeedItem id="xFeed2"
+
+                    <viz.feeds:FeedItem id="xFeed2"
                                         uid="categoryAxis"
                                         type="Dimension"    
                                         values="ProductID">

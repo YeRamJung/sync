@@ -1,0 +1,11 @@
+<mvc:View controllerName="sync6.exercise2110.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page   id="page2" 
+            title="{i18n>title}"
+            showNavButton="true"
+            navButtonPress=".onGoBack">
+    
+        <Text text="두번째 페이지"></Text>
+    </Page>
+</mvc:View>

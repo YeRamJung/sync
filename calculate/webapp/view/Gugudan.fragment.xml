@@ -1,0 +1,13 @@
+<core:FragmentDefinition 
+xmlns="sap.m"
+xmlns:core="sap.ui.core">
+
+    <Dialog id="dialog">  <!--몇 단의 구구단인지 첫번째 숫자 받아와볼까-->
+
+        <endButton>
+            <Button id="closeBtn" text="close" press=".onCloseDialog"></Button>
+        </endButton>
+        
+    </Dialog>
+
+</core:FragmentDefinition>

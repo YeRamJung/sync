@@ -1,0 +1,23 @@
+<mvc:View controllerName="sync6.mentoring02.controller.View"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Page id="page" title="{i18n>title}">
+
+        <List   id="list"
+                items="{employeeModel>/Employees}"
+                width="auto"
+                mode="SingleSelectMaster"
+                itemPress=".onOpenDialog">
+            <items>
+                <ObjectListItem id="listItem"
+                                title="{employeeModel>Name}"
+                                type="Active"
+                                number="{employeeModel>Position}"
+                                numberUnit="{employeeModel>Department}"
+                                >
+                </ObjectListItem>
+            </items>
+        </List>
+    </Page>
+</mvc:View>
