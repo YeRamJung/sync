@@ -6,7 +6,48 @@
         <content>
             <Button text="Detail" press=".onGoDetail">
             </Button>
-            <Input id="input" width="30%"></Input>
+            <Input id="input" width="30%" class="sapUiMediumMarginBottom"></Input>
+
+            <!--student.json내 정보들 m.Table에 뿌리기-->
+            <Table 
+                id="studentTable"
+                items="{studentModel>/students}" 
+                mode="SingleSelectLeft"
+                >
+                <columns>
+                    <Column>
+                        <header>
+                            <Label text="학생번호"></Label>
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="학생이름"></Label>
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="성별"></Label>
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="생년월일"></Label>
+                        </header>
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem type="Active">
+                        <cells>
+                            <Text text="{studentModel>no}"></Text>
+                            <Text text="{studentModel>name}"></Text>
+                            <Text text="{studentModel>gender}"></Text>
+                            <Text text="{studentModel>birthdate}"></Text>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
         </content>
     </Page>
 </mvc:View>
